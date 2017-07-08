@@ -1,0 +1,18 @@
+一、分支
+    1、默认分支：master
+    2、创建分支：
+        $ git branch aaa(aaa为创建的分支名)
+    3、查看所有分支:
+        $ git branch
+    4、因为默认分支是master，如果想要切换分支，在新创建的aaa分支上操作
+        $ git checkout aaa(切换)
+        $ git branch 再查看所有分支，显示当前分支为aaa
+    5、合并分支
+        将aaa分支合并到主分支
+        $ git merge aaa
+    6、删除分支
+        既然已经将aaa分支合并到master里面了，那么就不再需要aaa分支了
+        删除分支命令: $ git branch -d aaa
+        执行查看所有分支：$ git branch(这个时候就只剩下master分支了)
+    7、返回上一个版本(也可以用于误删文件，恢复上一版本)
+        $ git reset --hard id(每次commit的时候id不一样，写入id就可以恢复)
