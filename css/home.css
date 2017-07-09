@@ -1,0 +1,1081 @@
+@charset "UTF-8";
+
+html,body,img,div,p,ul,li,span,a,i{
+    margin:0;
+    padding:0;
+    border:0;
+}
+
+body{
+    min-width: 1280px;
+    font-family:"Microsoft YaHei";
+    font-size:14px;
+}
+
+body.scroll{
+    overflow:hidden;
+}
+
+/* 背景图片部分 */
+#bg{
+    position:absolute;
+    width:100%;
+    min-width:1280px;
+    height:2694px;/* 高度为三张背景图片的高度总和 */
+}
+
+#bg .bg{
+    width:100%;
+    background-position:center top;
+    background-repeat:no-repeat;
+}
+
+#bg .bg1{
+    height:1080px;
+    background:url("../images/home/bg1.jpg") no-repeat center top;
+}
+
+/* 插入flash动画 */
+#bg .bg1 .flash{
+    position:relative;
+    top:54px;
+    left:0;
+   /*  opacity:0; */
+}
+
+/* 动画部分 */
+#wraps{
+    overflow:hidden;
+    position:relative;
+    width:100%;
+    height:1080px;
+}
+
+/* 各个小动画的共同样式 */
+#wraps .wrap{
+    position:absolute;
+}
+
+/* 头部 */
+#wraps .head{
+    left:0;
+    top:-100px;
+    width:100%;
+    height:55px;
+    background:#fff;
+}
+
+#wraps .head .main{
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    width:1000px;
+    min-width:1000px;
+    height:100%;
+    margin:0 auto;
+}
+
+#wraps .head .main div{
+    float:left;
+}
+
+#wraps .head .main .head-logo{
+    width:134px;
+    height:44px;
+    background:url("../images/home/logo.png") no-repeat;
+    margin-top:5px;
+    cursor:pointer;
+}
+
+/* 悬浮logo，出现大图片 */
+#wraps .head .main .header{
+    position:relative;
+    margin:0px 20px 0px 9px;
+}
+
+#wraps .head .main .header .img{
+    width:420px;
+    height:55px;
+    opacity:1;
+}
+
+#wraps .head .main .header .bgLogo{
+    position:absolute;
+    top:55px;
+    left:-143px;
+    width:960px;
+    height:250px;
+    background:url("../images/home/header2.jpg") no-repeat;
+    z-index:100;
+    display:none;
+}
+
+#wraps .head .main .menu{
+    display:inline-block;
+    height:55px;
+}
+
+#wraps .head .main .menu ul{
+    height:100%;
+}
+
+#wraps .head .main .menu ul li{
+    float:left;
+    list-style:none;
+    margin-right:2px;
+}
+
+#wraps .head .main .menu ul li:hover{
+    border-bottom:3px solid #bc2e2e;
+}
+
+#wraps .head .main .menu ul li a{
+    display:block;
+    padding:0px 12px;
+    line-height:53px;
+    color:#000;
+    text-decoration:none;
+    font-size:12px;
+}
+
+#wraps .head .main .menu ul li.game a{
+    color:#bc2e2e;
+}
+
+#wraps .head .main .menu ul li.game a i{
+    display:inline-block;
+    width:0;
+    border:4px solid transparent;
+    border-top:4px solid #bc2e2e;
+    vertical-align:middle;
+    margin:2px 0 0 9px;
+}
+
+/* logo */
+#wraps .logo{
+    left:-200px;
+    top:78px;
+    width:165px;
+    height:115px;
+    opacity:0;
+}
+
+#wraps .logo a img{
+    display:block;
+    float:left;
+}
+
+#wraps .logo .logo1 img{
+    margin-left:30px;
+    cursor:pointer;
+}
+
+#wraps .logo .logo2 img{
+    width:86px;
+    height:86px;
+    border:2px solid #fff;
+    border-radius:20px;
+    margin-left:10px;
+    cursor:pointer;
+}
+
+/* 进入官网 */
+#wraps .home{
+    position:absolute;
+    right:-200px;
+    top:95px;
+    width:177px;
+    height:45px;
+    background:url("../images/home/home.png") no-repeat;
+    opacity:0;
+    z-index:10;
+    cursor:pointer;
+}
+
+#wraps .home a{
+    display:block;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.2);
+    border-radius:20px;
+    -webkit-transition:.3s;
+    transition:.3s;
+}
+
+#wraps .home a:hover{
+    background:rgba(255,255,255,0);
+}
+
+/* title */
+#wraps .title{
+    /* top:126px; */
+    top:647px;
+    right:30px;
+    opacity:0;
+    width:340px;
+    height:521px;
+    background:url("../images/home/title.png") no-repeat;
+    z-index:5;
+}
+
+/* video */
+#wraps .videoBtn{
+    top:505px;
+    right:285px;
+    width:165px;
+    height:120px;
+    background:url("../images/home/videoBtn.png") no-repeat;
+    z-index:10;
+}
+
+/* 视频弹窗按钮 */
+#wraps .videoBtn img{
+    position: absolute;
+    top:2px;
+    right:2px;
+    width:115px;
+    height:115px;
+    background:url("../images/home/video.png") no-repeat;
+    cursor:pointer;
+}
+
+/* 遮罩层 */
+#wraps .video{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:99;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.5);
+    display:none;
+}
+
+#wraps #video{
+    position:absolute;
+    top:-60px;
+    left:0;
+    right:0;
+    bottom:0;
+    width: 800px;
+    height: 450px;
+    margin:auto;
+    border: 2px solid #b69476;
+}
+
+/* close 关闭视频弹窗 */
+#wraps #video .close{
+    position:absolute;
+    top:0;
+    right:-50px;
+    width:35px;
+    height:35px;
+    background:url("../images/home/close.png");
+    cursor:pointer;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transition:.3s;
+    transition:.3s;
+}
+
+#wraps #video .close:hover{
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    -webkit-transition:.3s;
+    transition:.3s;
+}
+
+/* 下载游戏 */
+#wraps .download{
+    /* bottom:255px; */
+    bottom:100px;
+    right:123px;
+    opacity:0;
+    width:342px;
+    height:155px;
+}
+
+#wraps .download p{
+    font-size:16px;
+    font-weight:bold;
+    color:#3d2672;
+    margin-bottom:4px;
+}
+
+#wraps .download .left{
+    float:left;
+    width:130px;
+    height:130px;
+    background:rgba(255,255,255,.5);
+    border-radius:10px;
+    margin-right:3px;
+}
+
+/* 二维码 */
+#wraps .download .left .qrcode{
+    position:relative;
+    width:120px;
+    height:120px;
+    background:url("../images/home/qr.png") no-repeat center center/120px 120px;
+    border-radius:5px;
+    margin:5px;
+}
+
+#wraps .download .left .line{
+    position:absolute;
+    top:0;
+    left:-12px;
+    width:148px;
+    height:10px;
+    background:url("../images/home/line.png") no-repeat;
+    z-index:10;
+    -webkit-animation:linemove 3s linear infinite;
+            animation:linemove 3s linear infinite;/* 动画名称  运动时间  匀速  无限循环 */
+}
+
+@-webkit-keyframes linemove{
+    from { top:0px; }  /* 可以写 0% */
+    to { top:112px; }  /* 可以写 100% */
+}
+
+@keyframes linemove{
+    from { top:0px; }  /* 可以写 0% */
+    to { top:112px; }  /* 可以写 100% */
+}
+
+#wraps .download .right{
+    float:right;
+    width:205px;
+    height:130px;
+}
+
+#wraps .download .right a{
+    display:block;
+    width:205px;
+    height:61px;
+    margin-top:4px;
+}
+
+#wraps .download .right a.downand{
+    background:#000;
+    border-radius:5px;
+}
+
+#wraps .download .right a.downand img{
+    opacity: .88;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+#wraps .download .right a.downand img:hover{
+    opacity: 1;
+}
+
+/* 鼠标 */
+#wraps .mouse{
+    left:625px;
+    bottom:170px;
+    width:30px;
+    height:70px;
+    background:url("../images/home/dBtn.png") no-repeat;
+    -webkit-animation:mousemove 1.3s linear infinite;
+            animation:mousemove 1.3s linear infinite;/* 动画名称  时间  匀速  无限循环 */
+}
+
+@-webkit-keyframes mousemove{
+    from { bottom:170px; opacity: 1; }
+    to { bottom:100px; opacity: 0; }
+}
+
+@keyframes mousemove{
+    from { bottom:170px; opacity: 1; }
+    to { bottom:100px; opacity: 0; }
+}
+
+/* 背景2 */
+#bg .bg2{
+    height:1080px;
+    background:url("../images/home/bg2.jpg") no-repeat center top;
+}
+
+/* 新版本情报 */
+#newVersion{
+    position:relative;
+    width:100%;
+    /* height:580px; */
+    height:597px; /* 官网的高度580px，但是li的动画有背景定位17px，所以是597px */
+}
+
+#newVersion .main{
+    width:1280px;
+    margin:0 auto;
+}
+
+#newVersion .main .title{
+    position:relative;
+    top:0;
+    opacity:1;
+    /* width:800px; */
+    height:150px;
+    background:url("../images/home/newinf_title.png") no-repeat center top;
+    -webkit-transition:1s;
+    transition:1s;
+}
+
+#newVersion .main .title.hide{
+    top:80px;
+    opacity:0;
+}
+
+#newVersion .main .list{
+    width:100%;
+    /* height:580px; */
+}
+
+#newVersion .main .list ul{
+    width:100%;
+}
+
+#newVersion .main .list ul li{
+    list-style:none;
+    position: relative;
+    top:0;
+    opacity:1;
+    float:left;
+    width:418px;
+    height:213px;/* 图片高度196 + 背景定位17 */
+    margin:7px 0px;
+    cursor:pointer;
+    background-repeat:no-repeat;
+    background-position-y: 17px;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+#newVersion .main .list ul li.hide{
+    top:80px;
+    opacity:0;
+}
+
+#newVersion .main .list ul li.marginRight{
+    margin-right:13px;
+}
+
+#newVersion .main .list ul li:hover{
+    background-position-y: 0;
+}
+
+#newVersion .main .list ul li.img1{
+    background-image:url("../images/home/p1.png");
+}
+
+#newVersion .main .list ul li.img2{
+    background-image:url("../images/home/p2.png")
+}
+
+#newVersion .main .list ul li.img3{
+    background-image:url("../images/home/p3.png");
+}
+
+#newVersion .main .list ul li.img4{
+    background-image:url("../images/home/p4.png");
+}
+
+#newVersion .main .list ul li.img5{
+    background-image:url("../images/home/p5.png");
+}
+
+#newVersion .main .list ul li.img6{
+    background-image:url("../images/home/p6.png");
+}
+
+#newVersion .main .list ul li i{
+    position:absolute;
+    background: #a57c47;
+}
+
+#newVersion .main .list ul li .i1,#newVersion .main .list ul li .i3{
+    width:0;
+    height:2px;
+}
+
+#newVersion .main .list ul li .i2,#newVersion .main .list ul li .i4{
+    width:2px;
+    height:0;
+}
+
+#newVersion .main .list ul li .i1{
+    left:8px;
+    top:8px;
+}
+
+#newVersion .main .list ul li .i2{
+    right:8px;
+    top:8px;
+}
+
+#newVersion .main .list ul li .i3{
+    right:8px;
+    bottom:25px;
+}
+
+#newVersion .main .list ul li .i4{
+    left:8px;
+    bottom:25px;
+}
+
+#newVersion .main .list ul li:hover .i1{
+    -webkit-animation:changeW .2s 0s linear 1;
+            animation:changeW .2s 0s linear 1;
+}
+#newVersion .main .list ul li:hover .i2{
+    -webkit-animation:changeH .09s .2s linear 1;
+            animation:changeH .09s .2s linear 1;
+}
+#newVersion .main .list ul li:hover .i3{
+    -webkit-animation:changeW .2s .29s linear 1;
+            animation:changeW .2s .29s linear 1;
+}
+#newVersion .main .list ul li:hover .i4{
+    -webkit-animation:changeH .09s .49s linear 1;
+            animation:changeH .09s .49s linear 1;
+}
+#newVersion .main .list ul li:hover i{
+    -webkit-animation-fill-mode:forwards !important;
+            animation-fill-mode:forwards !important;
+}
+
+@-webkit-keyframes changeW{
+    from { width:0; }
+    to { width:402px; }
+}
+
+@keyframes changeW{
+    from { width:0; }
+    to { width:402px; }
+}
+
+@-webkit-keyframes changeH{
+    from { height:0; }
+    to { height:180px; }
+}
+
+@keyframes changeH{
+    from { height:0; }
+    to { height:180px; }
+}
+
+/* 新版本情报---详细介绍 */
+#newVersion .detail{
+    position:fixed;
+    left:0;
+    top:0;
+    opacity:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.5);
+    z-index:99;
+    /* display:none; */
+}
+
+#newVersion .detail .left{
+    position:absolute;
+    left:14px;
+    top:258px;
+    width:46px;
+    height:18px;
+    background:url("../images/home/toleft.png") no-repeat;
+    cursor:pointer;
+}
+
+#newVersion .detail .left:hover{
+    -webkit-animation:leftmove 1.8s linear infinite;
+            animation:leftmove 1.8s linear infinite;
+}
+
+@-webkit-keyframes leftmove{
+    0% { left:14px; }
+    50% { left:-26px; }
+    100% { left:14px; }
+}
+
+@keyframes leftmove{
+    0% { left:14px; }
+    50% { left:-26px; }
+    100% { left:14px; }
+}
+
+#newVersion .detail .right{
+    position:absolute;
+    right:20px;
+    top:258px;
+    width:46px;
+    height:18px;
+    background:url("../images/home/toright.png") no-repeat;
+    cursor:pointer;
+}
+
+#newVersion .detail .right:hover{
+    -webkit-animation:rightmove 1.8s linear infinite;
+            animation:rightmove 1.8s linear infinite;
+}
+
+@-webkit-keyframes rightmove{
+    0% { right:20px; }
+    50% { right:-30px; }
+    100% { right:20px; }
+}
+
+@keyframes rightmove{
+    0% { right:20px; }
+    50% { right:-30px; }
+    100% { right:20px; }
+}
+
+#newVersion .detail .content{
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    width:1180px;
+    height:735px;
+    margin:auto;
+
+}
+
+#newVersion .detail .content .close{
+    position:absolute;
+    top:85px;
+    right:85px;
+    width:34px;
+    height:34px;
+    background:url("../images/home/close.png") no-repeat;
+    cursor:pointer;
+    -webkit-transform:rotate(0deg);
+            transform:rotate(0deg);
+    -webkit-transition:.5s;
+    transition:.5s;
+}
+
+#newVersion .detail .content .close:hover{
+    -webkit-transform:rotate(180deg);
+            transform:rotate(180deg);
+}
+
+/* 详细介绍---背景图片 */
+#newVersion .detail .content ul li{
+    list-style:none;
+    position:absolute;
+    left:0;
+    top:0;
+    width:1180px;
+    height:735px;
+    margin:-36px 0 0 -86px;
+    cursor:pointer;
+}
+
+#newVersion .detail .content ul li .text{
+    position:relative;
+    width:420px;
+    height:330px;
+    margin:200px 0 0 573px;
+    overflow:hidden;
+}
+
+#newVersion .detail .content ul li .text:hover .scroll{
+    display:block;
+}
+
+#newVersion .detail .content ul li .text .txt{
+    position:absolute;
+    left:0;
+    top:0;
+    width:390px;
+    font-size:16px;
+}
+
+#newVersion .detail .content ul li .text .txt p{
+    color:#393939;
+    line-height:36px;
+}
+
+#newVersion .detail .content ul li .text .txt .txtRed{
+    font-weight:bold;
+    color:#e5402a;
+}
+
+#newVersion .detail .content ul li .text .txt .txtBold{
+    font-weight:bold;
+    color:#000;
+}
+
+#newVersion .detail .content ul li .text .scroll{
+    position:absolute;
+    top:0;
+    right:0;
+    width:8px;
+    height:100%;
+    background:#e2e2e2;
+    cursor:normal;
+    display:none;
+}
+
+#newVersion .detail .content ul li .text .scroll .bar{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    background:#000;
+}
+
+/* 背景3 游戏特色 */
+#bg .bg3{
+    height:534px;
+    background:url("../images/home/bg3.jpg") no-repeat center top;
+}
+
+#gamegood{
+    position:relative;
+    width:100%;
+    height:620px;
+    margin:120px auto 0;
+}
+
+#gamegood .main{
+    width: 1130px;
+    height:100%;
+    margin:0 auto;
+}
+
+#gamegood .main .title{
+    position:relative;
+    top:0;
+    opacity:1;
+    /* width:800px; */
+    height:150px;
+    background:url("../images/home/gamegood_title.png") no-repeat center top;
+    margin:0 auto;
+    -webkit-transition:1s;
+    transition:1s;
+}
+
+#gamegood .main .title.hide{
+    top:80px;
+    opacity:0;
+}
+
+#gamegood .main .list{
+    position:relative;
+    width:930px;
+    height:439px;
+    margin:30px auto 0;
+    /* border:1px solid red; */
+    -webkit-transform-style:preserve-3d;
+            transform-style:preserve-3d;/* 添加场景 */
+
+}
+
+#gamegood .main .list .btn div{
+    position:absolute;
+    width:42px;
+    height:82px;
+    background:#000;
+    opacity:1;
+    cursor:pointer;
+}
+
+#gamegood .main .list .btn div:hover{
+    opacity:0.5;
+}
+
+#gamegood .main .list .btn .leftBtn{
+    top:50%;
+    margin-top:-41px;
+    left:-101px;
+    background:url("../images/home/left.png") no-repeat;
+}
+
+#gamegood .main .list .btn .rightBtn{
+    top:50%;
+    margin-top:-41px;
+    right:-101px;
+    background:url("../images/home/right.png") no-repeat;
+}
+
+#gamegood .main .list ul{
+    width: 776px;
+    height: 439px;
+    -webkit-perspective:800px;
+            perspective:800px;
+}
+
+#gamegood .main .list ul li{
+    position:absolute;
+    left:77px;
+    top:0;
+    list-style:none;
+    width:776px;
+    height:439px;
+    background:#000;
+    -webkit-transform:translate3D(0px,0px,-233px) rotateY(0deg);
+            transform:translate3D(0px,0px,-233px) rotateY(0deg);
+    -webkit-transition:-webkit-transform .5s;
+    transition:-webkit-transform .5s;
+    transition:transform .5s;
+    transition:transform .5s, -webkit-transform .5s;
+}
+
+#gamegood .main .list ul li img{
+    opacity:0.5;
+}
+
+#gamegood .main .list ul li.middle img{
+    opacity:1;
+}
+
+#gamegood .main .list ul li.left{
+    -webkit-transform:translate3D(-252px,0px,-380px) rotateY(45deg);
+            transform:translate3D(-252px,0px,-380px) rotateY(45deg);/* 先位移再旋转 */
+    z-index:1;
+    cursor:pointer;
+}
+
+#gamegood .main .list ul li.middle{
+    -webkit-transform:translate3D(0px,0px,0px) rotateY(0deg);
+            transform:translate3D(0px,0px,0px) rotateY(0deg);
+    z-index:3;
+    cursor:normal;
+}
+
+#gamegood .main .list ul li.right{
+    -webkit-transform:translate3D(252px,0px,-380px) rotateY(-45deg);
+            transform:translate3D(252px,0px,-380px) rotateY(-45deg);
+    z-index:2;
+    cursor:pointer;
+}
+
+#gamegood .main .list ul li i{
+    position:absolute;
+    background:#fff;
+}
+
+#gamegood .main .list ul li.middle i.i1{
+    top:16px;
+    left:15px;
+}
+
+#gamegood .main .list ul li.middle i.i2{
+    top:16px;
+    right:15px;
+}
+
+#gamegood .main .list ul li.middle i.i3{
+    bottom:16px;
+    right:15px;
+}
+
+#gamegood .main .list ul li.middle i.i4{
+    bottom:16px;
+    left:15px;
+}
+
+#gamegood .main .list ul li.middle i.i1,#gamegood .main .list ul li.middle i.i3{
+    width:0px;
+    height:1px;
+}
+
+#gamegood .main .list ul li.middle i.i2,#gamegood .main .list ul li.middle i.i4{
+    width:1px;
+    height:0px;
+}
+#gamegood .main .list ul li.middle .i1{
+    -webkit-animation:changeWidth .4s 0s linear 1;
+            animation:changeWidth .4s 0s linear 1;
+}
+#gamegood .main .list ul li.middle .i2{
+    -webkit-animation:changeHeight .09s .4s linear 1;
+            animation:changeHeight .09s .4s linear 1;
+}
+#gamegood .main .list ul li.middle .i3{
+    -webkit-animation:changeWidth .4s .49s linear 1;
+            animation:changeWidth .4s .49s linear 1;
+}
+#gamegood .main .list ul li.middle .i4{
+    -webkit-animation:changeHeight .09s .89s linear 1;
+            animation:changeHeight .09s .89s linear 1;
+}
+#gamegood .main .list ul li.middle i{
+    -webkit-animation-fill-mode:forwards !important;
+            animation-fill-mode:forwards !important;
+}
+
+@-webkit-keyframes changeWidth{
+    from { width:0px; }
+    to { width:745px; }
+}
+
+@keyframes changeWidth{
+    from { width:0px; }
+    to { width:745px; }
+}
+
+@-webkit-keyframes changeHeight{
+    from { height:0px; }
+    to { height:406px; }
+}
+
+@keyframes changeHeight{
+    from { height:0px; }
+    to { height:406px; }
+}
+
+/* foot 底部 */
+#foot{
+    position:relative;
+    width:100%;
+    height:230px;
+    margin-top:100px;
+}
+
+#foot .share{
+    width:600px;
+    margin:0 auto 30px;
+}
+
+#foot .share span{
+    line-height:20px;
+}
+
+#foot .share span,#foot .share ul{
+    display:inline-block;
+    color:#666;
+    font-size:12px;
+    font-family: simSun,Arial;
+    vertical-align:bottom;
+    margin-right:20px;
+}
+
+#foot .share ul li{
+    list-style:none;
+    float:left;
+    margin-right:20px;
+    background:rgba(0,0,0,0);
+    opacity:1;
+}
+
+#foot .share ul li:hover{
+    background:rgba(0,0,0,.3);
+    opacity:0.5;
+}
+
+#foot .share ul li i{
+    font-size:22px;
+    height:20px;
+    margin-right:4px;
+}
+
+
+#foot .share ul li a{
+    font-size:14px;
+    text-decoration:none;
+    color:#666;
+}
+
+#foot .info{
+    width:100%;
+    height:180px;
+    background:#171020;
+}
+
+#foot .info .detail{
+    width:830px;
+    height:150px;
+    margin:0 auto;
+    padding-top:30px;
+    font-size:12px;
+}
+
+#foot .info .detail .logo-link{
+    width:100%;
+    height:45px;
+    /* border:1px solid red; */
+}
+
+#foot .info .detail .logo-link .ff{
+    height:45px;
+    float:left;
+}
+
+#foot .info .detail .logo-link .logo div{
+    margin-top:7px;
+}
+
+#foot .info .detail .link{
+    margin-left:40px;
+    color:#666;
+    margin-top:3px;
+}
+
+#foot .info .detail .link .nav{
+    margin-bottom:3px;
+}
+
+#foot .info .detail .link a{
+    text-decoration:none;
+    color:#666;
+}
+
+#foot .info .detail .link a:hover,#foot .info .detail .remind p a:hover{
+    text-decoration:underline;
+    color:#fff;
+}
+
+#foot .info .detail .link .copy span{
+    display:inline-block;
+    color:#666;
+}
+
+#foot .info .detail .link .copy span.sel{
+    width:142px;
+    height:26px;
+    line-height:26px;
+    text-align:center;
+    margin-left:160px;
+    background:#610000;
+    color:#fff;
+    cursor:pointer;
+}
+
+#foot .info .detail .link .copy span.sel a{
+    color:#fff;
+}
+
+#foot .info .detail .link .copy span.sel i{
+    font-size:14px;
+    font-style:normal;
+    margin:0 2px;
+}
+
+#foot .info .detail .remind{
+    /* border:1px solid red; */
+    color:#666;
+    margin-top:15px;
+}
+
+#foot .info .detail .remind p{
+    text-align:left;
+    line-height:25px;
+}
+
+#foot .info .detail .remind p a{
+    text-decoration:none;
+    color:#666;
+    margin-right:10px;
+}
+
+
+
+
