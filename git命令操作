@@ -14,5 +14,9 @@
         既然已经将aaa分支合并到master里面了，那么就不再需要aaa分支了
         删除分支命令: $ git branch -d aaa
         执行查看所有分支：$ git branch(这个时候就只剩下master分支了)
+        注意：
+            $ git branch -d 分支名
+            虽然可以删除分支，但是只能删除本地分支，并不能删除远程分支(也就是github上的分支)，
+            所以执行命令：$ git push origin :分支名  就可以删除github上的远程分支了
     7、返回上一个版本(也可以用于误删文件，恢复上一版本)
         $ git reset --hard id(每次commit的时候id不一样，写入id就可以恢复)
